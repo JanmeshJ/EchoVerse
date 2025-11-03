@@ -1,6 +1,7 @@
 # 🎧 EchoVerse: Real-Time Speech Intelligence
 
 **Live Demo:** [https://echoverse-593998396101.us-central1.run.app](https://echoverse-593998396101.us-central1.run.app)
+[![Cloud Run](https://img.shields.io/badge/Deployed%20on-Google%20Cloud%20Run-brightgreen?logo=googlecloud)](https://echoverse-593998396101.us-central1.run.app)
 
 ---
 
