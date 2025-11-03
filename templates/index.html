@@ -3,31 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EchoVerse - Real-Time Speech Intelligence</title>
+  <title>EchoVerse – Real-Time Speech Intelligence</title>
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
-  <div class="glass-card">
-    <h1>🎧 <span class="accent">EchoVerse</span></h1>
-    <p class="tagline">Real-Time Speech Intelligence</p>
-
-    <div class="controls">
-      <input type="file" id="audioFile" accept="audio/*" hidden />
-      <button id="uploadBtn" class="blue">Upload Audio</button>
-      <button id="micBtn" class="pink">Record</button>
-      <button id="transcribeBtn" class="green" disabled>Transcribe</button>
+  <div class="app-container">
+    <!-- Animated Background -->
+    <div class="background-animation">
+      <div class="floating-orb orb-1"></div>
+      <div class="floating-orb orb-2"></div>
+      <div class="floating-orb orb-3"></div>
     </div>
 
-    <p id="status" class="status"></p>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">E</div>
+        <h1><span class="accent">EchoVerse</span></h1>
+      </div>
+    </header>
 
-    <div id="result" class="hidden">
-      <h2>Transcription:</h2>
-      <pre id="transcribedText"></pre>
-      <p id="details"></p>
-    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="title-section">
+        <h2 class="main-title">Real-Time Speech Intelligence</h2>
+        <p class="subtitle">Transform your voice into text with advanced AI technology</p>
+      </div>
+
+      <div class="control-center">
+        <div class="controls">
+          <input type="file" id="audioFile" accept="audio/*" hidden />
+          <button id="uploadBtn" class="blue">Upload Audio</button>
+          <button id="micBtn" class="pink">Record</button>
+          <button id="transcribeBtn" class="green" disabled>Transcribe</button>
+        </div>
+
+        <!-- Audio Visualizer -->
+        <div class="audio-visualizer" id="visualizer">
+          <div class="visualizer-bar" style="height: 20px;"></div>
+          <div class="visualizer-bar" style="height: 35px;"></div>
+          <div class="visualizer-bar" style="height: 25px;"></div>
+          <div class="visualizer-bar" style="height: 45px;"></div>
+          <div class="visualizer-bar" style="height: 30px;"></div>
+          <div class="visualizer-bar" style="height: 50px;"></div>
+          <div class="visualizer-bar" style="height: 40px;"></div>
+          <div class="visualizer-bar" style="height: 55px;"></div>
+          <div class="visualizer-bar" style="height: 35px;"></div>
+          <div class="visualizer-bar" style="height: 45px;"></div>
+          <div class="visualizer-bar" style="height: 30px;"></div>
+          <div class="visualizer-bar" style="height: 40px;"></div>
+          <div class="visualizer-bar" style="height: 25px;"></div>
+          <div class="visualizer-bar" style="height: 35px;"></div>
+          <div class="visualizer-bar" style="height: 20px;"></div>
+        </div>
+
+        <p id="status" class="status"></p>
+
+        <div id="result" class="hidden">
+          <h2>Transcription</h2>
+          <div class="transcription-box">
+            <pre id="transcribedText"></pre>
+          </div>
+          <div id="details">
+            <span class="detail-item">
+              <span id="language"></span>
+            </span>
+            <span class="detail-item">
+              <span id="time"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      &copy; 2025 <strong>EchoVerse by Janmesh</strong>
+    </footer>
   </div>
-
-  <footer>© 2025 <strong>EchoVerse by Janmesh</strong></footer>
 
   <script src="/static/script.js"></script>
 </body>

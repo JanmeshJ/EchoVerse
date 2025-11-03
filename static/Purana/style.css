@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Use a lighter background and remove fixed height */
+  background: #f0f4f8; /* Lighter, less busy background */
+  /* Remove height: 100vh; and keep it simple for full-page design */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start content from the top */
+  align-items: center;
+  margin: 0;
+  padding: 40px 0; /* Add top/bottom padding for content */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+.glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8); /* Slightly more opaque background */
+  border-radius: 20px;
+  padding: 40px 50px; /* Reduced padding slightly */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 95%; /* Make it wider */
+  max-width: 1000px; /* Increase max width significantly */
+  min-height: 500px; /* Give it a minimum height */
+  transition: 0.3s ease;
+  margin-top: 20px; /* Add margin to separate from the top */
+  margin-bottom: 20px;
+}
+
+.glass-card:hover {
+  transform: none; /* Remove hover scaling to make it feel less like a small widget */
+}
+
+/* --- (Rest of the CSS remains the same) --- */
+
+.glass-card:hover {
+  transform: scale(1.01);
+}
+
+.accent {
+  color: #007bff;
+}
+
+.tagline {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: 0.25s ease;
+}
+
+button.blue { background-color: #007bff; }
+button.pink { background-color: #ff4081; }
+button.green { background-color: #00b894; }
+
+button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 8px;
+  color: #333;
+}
+
+.hidden { display: none; }
+
+#result {
+  margin-top: 30px;
+  text-align: left;
+}
+
+pre {
+  background: #f7f9fb;
+  padding: 12px;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: #666;
+}
