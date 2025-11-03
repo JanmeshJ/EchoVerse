@@ -22,6 +22,6 @@ steps:
       - "--platform=managed"
       - "--allow-unauthenticated"
 
-  # Step 4: Sanity check message
-  - name: "gcr.io/cloud-builders/gcloud"
-    args: ["echo", "Deployment Successful!"]
+  # Step 4: Confirmation message
+  - name: "gcr.io/cloud-builders/bash"
+    args: ["-c", "echo ✅ Deployment Successful!"]
