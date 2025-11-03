@@ -1,22 +1,27 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 steps:
+  # Step 1: Build Docker image
   - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "gcr.io/$PROJECT_ID/echoverse", "."]
 
+  # Step 2: Push image to Google Container Registry
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/$PROJECT_ID/echoverse"]
 
+  # Step 3: Deploy to Cloud Run
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
     args:
-      [
-        "run", "deploy", "echoverse",
-        "--image=gcr.io/$PROJECT_ID/echoverse",
-        "--region=us-central1",
-        "--platform=managed",
-        "--allow-unauthenticated"
-      ]
+      - "run"
+      - "deploy"
+      - "echoverse"
+      - "--image=gcr.io/$PROJECT_ID/echoverse"
+      - "--region=us-central1"
+      - "--platform=managed"
+      - "--allow-unauthenticated"
 
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['echo', 'Hello Cloud Build']
-  - options:
-    logging: CLOUD_LOGGING_ONLY
+  # Step 4: Sanity check message
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["echo", "Deployment Successful!"]
