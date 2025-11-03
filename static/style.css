@@ -2,26 +2,38 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(120deg, #eef3f9, #f9fbff);
-  height: 100vh;
+  /* Use a lighter background and remove fixed height */
+  background: #f0f4f8; /* Lighter, less busy background */
+  /* Remove height: 100vh; and keep it simple for full-page design */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Start content from the top */
   align-items: center;
   margin: 0;
+  padding: 40px 0; /* Add top/bottom padding for content */
+  min-height: 100vh; /* Ensure it takes full viewport height */
 }
 
 .glass-card {
   backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 25px;
-  padding: 50px 60px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8); /* Slightly more opaque background */
+  border-radius: 20px;
+  padding: 40px 50px; /* Reduced padding slightly */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
-  width: 90%;
-  max-width: 650px;
+  width: 95%; /* Make it wider */
+  max-width: 1000px; /* Increase max width significantly */
+  min-height: 500px; /* Give it a minimum height */
   transition: 0.3s ease;
+  margin-top: 20px; /* Add margin to separate from the top */
+  margin-bottom: 20px;
 }
+
+.glass-card:hover {
+  transform: none; /* Remove hover scaling to make it feel less like a small widget */
+}
+
+/* --- (Rest of the CSS remains the same) --- */
 
 .glass-card:hover {
   transform: scale(1.01);
